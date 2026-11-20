@@ -1,7 +1,7 @@
 {
-  "versionCode": 8,
-  "versionName": "2.4.0",
+  "versionCode": 9,
+  "versionName": "2.4.1",
   "apkUrl": "https://github.com/Jimbo1011/porchsync/releases/latest/download/PorchSync.apk",
   "releasePage": "https://jimbo1011.github.io/porchsync/",
-  "notes": "PorchSync v2.4.0: Multi-zone 4-sensor Porch climate control, decoupled Porch light, 3-setting Air remote (Power / Energy Saver / Cool) at +2.0/+3.0/+3.5°F stages, and strict heat-vs-AC interlock."
+  "notes": "PorchSync v2.4.1: Removed Porch Lantern 2 (handled by separate scene), multi-zone 4-sensor Porch climate control, and 3-setting Air remote (Power / Energy Saver / Cool)."
 }
