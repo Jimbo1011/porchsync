@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#090d16">
+    <title>PorchSync APK Download</title>
+    <style>
+        :root {
+            --bg: #090d16;
+            --surface: #121824;
+            --card: #1a2232;
+            --border: #29354a;
+            --text: #f0f4fc;
+            --muted: #94a3b8;
+            --blue: #38bdf8;
+            --green: #4ade80;
+            --primary: #2563eb;
+            --emerald: #10b981;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: radial-gradient(circle at top center, rgba(37, 99, 235, 0.2), var(--bg) 55%);
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 16px;
+            line-height: 1.5;
+        }
+        .wrap {
+            width: 100%;
+            max-width: 460px;
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 28px 22px;
+            box-shadow: 0 20px 44px rgba(0, 0, 0, 0.45);
+        }
+        .top-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+        .app-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #1d4ed8, #38bdf8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+            flex-shrink: 0;
+        }
+        h1 {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            line-height: 1.15;
+        }
+        .sub {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 3px;
+        }
+        .ver-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(74, 222, 128, 0.12);
+            border: 1px solid rgba(74, 222, 128, 0.35);
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 999px;
+            margin-bottom: 14px;
+        }
+        .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 8px var(--green);
+        }
+        .notes {
+            font-size: 13px;
+            color: var(--muted);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 14px;
+            margin-bottom: 18px;
+        }
+        .dl-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 15px 18px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: -0.2px;
+            box-shadow: 0 8px 22px rgba(16, 185, 129, 0.35);
+            transition: transform 0.15s ease, filter 0.15s ease;
+        }
+        .dl-btn:active {
+            transform: scale(0.98);
+            filter: brightness(0.95);
+        }
+        .meta-line {
+            text-align: center;
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .steps-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            color: var(--blue);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .steps {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .steps li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 10px 12px;
+            font-size: 13px;
+            color: var(--text);
+        }
+        .num {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: rgba(56, 189, 248, 0.18);
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .ota-tip {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--muted);
+            text-align: center;
+        }
+        .ota-tip strong { color: var(--text); }
+    </style>
+</head>
+<body>
+    <main class="wrap">
+        <section class="card">
+            <div class="top-row">
+                <div class="app-icon">
+                    <svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" fill="none" stroke-width="2.2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </div>
+                <div>
+                    <h1>PorchSync for Android</h1>
+                    <p class="sub">Smart Porch Heat, Fan &amp; IR Air Controller</p>
+                </div>
+            </div>
+
+            <div class="ver-badge">
+                <span class="dot"></span>
+                <span id="versionLabel">Latest Release: v2.3.1 &bull; Build 7</span>
+            </div>
+
+            <p class="notes" id="releaseNotes">
+                PorchSync v2.3.1: Verified Tuya Western America Porch devices, 3-heater &amp; Smart Remote Air controls, circulation-safe Porch fan interlock, and swipe-down OTA updates.
+            </p>
+
+            <a id="apkDownloadBtn" class="dl-btn" href="https://github.com/Jimbo1011/porchsync/releases/latest/download/PorchSync.apk">
+                <span>&#x2B07; Download PorchSync.apk</span>
+            </a>
+            <div class="meta-line">Android 8.0+ &bull; Direct Signed Debug APK</div>
+
+            <div class="steps-title">Quick Phone Install Guide</div>
+            <ol class="steps">
+                <li>
+                    <span class="num">1</span>
+                    <span>Tap <strong>Download PorchSync.apk</strong> above on your Android phone.</span>
+                </li>
+                <li>
+                    <span class="num">2</span>
+                    <span>Open the downloaded <code>PorchSync.apk</code> file from your browser or Downloads notification.</span>
+                </li>
+                <li>
+                    <span class="num">3</span>
+                    <span>If prompted once, allow <strong>Install unknown apps</strong> for your browser, then tap <strong>Install</strong> / <strong>Update</strong>.</span>
+                </li>
+            </ol>
+
+            <p class="ota-tip">
+                Already installed? <strong>Swipe down</strong> inside PorchSync anytime to check this page for newer APK releases. Open <strong>No-PC Cloud</strong> in the app to enter your Tuya Access ID &amp; Secret once.
+            </p>
+        </section>
+    </main>
+
+    <script>
+        (async function () {
+            try {
+                const res = await fetch("./version.json?t=" + Date.now(), { cache: "no-store" });
+                if (!res.ok) return;
+                const data = await res.json();
+                if (data.versionName && data.versionCode) {
+                    const verEl = document.getElementById("versionLabel");
+                    if (verEl) verEl.textContent = "Latest Release: v" + data.versionName + " • Build " + data.versionCode;
+                }
+                if (data.notes) {
+                    const notesEl = document.getElementById("releaseNotes");
+                    if (notesEl) notesEl.textContent = data.notes;
+                }
+                if (data.apkUrl) {
+                    const btnEl = document.getElementById("apkDownloadBtn");
+                    if (btnEl) btnEl.href = data.apkUrl;
+                }
+            } catch (_) {}
+        })();
+    </script>
+</body>
+</html>
