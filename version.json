@@ -1,7 +1,7 @@
 {
-  "versionCode": 15,
-  "versionName": "2.7.1",
+  "versionCode": 16,
+  "versionName": "2.7.2",
   "apkUrl": "https://github.com/Jimbo1011/porchsync/releases/latest/download/PorchSync.apk",
   "releasePage": "https://jimbo1011.github.io/porchsync/",
-  "notes": "PorchSync v2.7.1: Fixed outdoor temp scaling (<54°F), redesigned Home Screen Widget (Inside & Outside temps + Fan button, no clipping), instant widget/notification sync, active humidity & outdoor feed-forward on Android, and 1-tap widget install."
+  "notes": "PorchSync v2.7.2: Fixed Android 14+ startup crash (added required connectedDevice FGS permissions, ServiceCompat.startForeground, and deferred service launch after WebView init), verified crash-free on Android 14."
 }
