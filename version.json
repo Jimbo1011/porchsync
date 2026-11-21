@@ -1,7 +1,7 @@
 {
-  "versionCode": 9,
-  "versionName": "2.4.1",
+  "versionCode": 15,
+  "versionName": "2.7.1",
   "apkUrl": "https://github.com/Jimbo1011/porchsync/releases/latest/download/PorchSync.apk",
   "releasePage": "https://jimbo1011.github.io/porchsync/",
-  "notes": "PorchSync v2.4.1: Removed Porch Lantern 2 (handled by separate scene), multi-zone 4-sensor Porch climate control, and 3-setting Air remote (Power / Energy Saver / Cool)."
+  "notes": "PorchSync v2.7.1: Fixed outdoor temp scaling (<54°F), redesigned Home Screen Widget (Inside & Outside temps + Fan button, no clipping), instant widget/notification sync, active humidity & outdoor feed-forward on Android, and 1-tap widget install."
 }
