@@ -7,6 +7,8 @@
     <title>PorchSync APK Download</title>
     <style>
         :root {
+            color-scheme: dark;
+            accent-color: #38bdf8;
             --bg: #090d16;
             --surface: #121824;
             --card: #1a2232;
@@ -31,22 +33,26 @@
             padding: 20px 16px;
             line-height: 1.5;
         }
+        :where(a:any-link, button, summary):focus-visible {
+            outline: 3px solid var(--blue);
+            outline-offset: 2px;
+        }
         .wrap {
             width: 100%;
-            max-width: 460px;
+            max-width: 480px;
         }
         .card {
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 22px;
-            padding: 28px 22px;
+            padding: 26px 22px;
             box-shadow: 0 20px 44px rgba(0, 0, 0, 0.45);
         }
         .top-row {
             display: flex;
             align-items: center;
             gap: 14px;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
         .app-icon {
             width: 58px;
@@ -98,7 +104,7 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 12px 14px;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
         .dl-btn {
             display: flex;
@@ -122,11 +128,94 @@
             filter: brightness(0.95);
         }
         .meta-line {
+            display: block;
             text-align: center;
             font-size: 11px;
             color: var(--muted);
             margin-top: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 14px;
+            font-variant-numeric: tabular-nums;
+        }
+        .integrity-row {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 10px 12px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .sha-wrap {
+            min-width: 0;
+            flex: 1;
+        }
+        .sha-label {
+            display: block;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--blue);
+            margin-bottom: 2px;
+        }
+        .sha-code {
+            display: block;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 11px;
+            color: var(--text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .copy-sha-btn {
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            border-radius: 8px;
+            padding: 7px 11px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .qr-panel {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 12px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .qr-box {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 6px;
+            width: 96px;
+            height: 96px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .qr-box svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .qr-copy strong {
+            display: block;
+            font-size: 13px;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+        .qr-copy p {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.35;
         }
         .steps-title {
             font-size: 12px;
@@ -140,7 +229,7 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 9px;
         }
         .steps li {
             display: flex;
@@ -167,21 +256,63 @@
             flex-shrink: 0;
             margin-top: 1px;
         }
+        .releases-details {
+            margin-top: 14px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 10px 12px;
+        }
+        .releases-details summary {
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--blue);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .releases-list {
+            list-style: none;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .releases-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            padding-top: 8px;
+            border-top: 1px solid var(--border);
+            font-size: 12px;
+        }
+        .releases-list a {
+            color: var(--green);
+            font-weight: 700;
+            text-decoration: none;
+            white-space: nowrap;
+        }
         .ota-tip {
-            margin-top: 16px;
+            margin-top: 14px;
             font-size: 12px;
             color: var(--muted);
             text-align: center;
         }
         .ota-tip strong { color: var(--text); }
+        @media (prefers-reduced-motion: reduce) {
+            .dl-btn { transition: none; }
+        }
     </style>
 </head>
 <body>
     <main class="wrap">
         <section class="card">
             <div class="top-row">
-                <div class="app-icon">
-                    <svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" fill="none" stroke-width="2.2">
+                <div class="app-icon" aria-hidden="true">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" fill="none" stroke-width="2.2">
                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                         <polyline points="9 22 9 12 15 12 15 22"></polyline>
                     </svg>
@@ -193,21 +324,37 @@
             </div>
 
             <div class="ver-badge">
-                <span class="dot"></span>
-                <span id="versionLabel">Latest Release: v2.7.3 &bull; Build 17</span>
+                <span class="dot" aria-hidden="true"></span>
+                <span id="versionLabel">Latest Release: v2.8.0 &bull; Build 18</span>
             </div>
 
             <p class="notes" id="releaseNotes">
-                PorchSync v2.7.3: Oscillating fan +2.0°F cooling-only (no circulation), unoccupied setback fix, in-app thresholds &amp; Day/Night Quiet Hours schedule, 24h temp/runtime graph, Feels-Like &amp; stale warnings, timed presets/All OFF, compressor cooldown, in-app APK updater &amp; JSON backup.
+                PorchSync v2.8.0: Release-signed R8 APK (smaller &amp; upgrade-safe), 1-tap .json file &amp; PIN-encrypted backup, SHA-256 OTA verification, freeze/overheat/door/offline alerts, 2x1 compact widget &amp; launcher shortcuts, Home Wi-Fi LAN PC fast auto-switching, JUnit tests &amp; CI release automation.
             </p>
 
             <a id="apkDownloadBtn" class="dl-btn" href="https://github.com/Jimbo1011/porchsync/releases/latest/download/PorchSync.apk">
-                <span>&#x2B07; Download PorchSync.apk (v2.7.3)</span>
+                <span>&#x2B07; Download PorchSync.apk (v2.8.0)</span>
             </a>
             <div style="margin-top: 10px; text-align: center;">
                 <a id="githubReleaseLink" href="https://github.com/Jimbo1011/porchsync/releases/latest/download/PorchSync.apk" style="color: var(--blue); font-size: 12px; text-decoration: none;">Direct GitHub Releases Mirror &rarr;</a>
             </div>
-            <div class="meta-line">Android 8.0+ &bull; Direct Signed Debug APK</div>
+            <span class="meta-line" id="apkMetaLine">Android 8.0+ &bull; Release-Signed (R8) &bull; 2.04 MB &bull; 2026-11-22 04:20 UTC</span>
+
+            <div class="integrity-row">
+                <div class="sha-wrap">
+                    <span class="sha-label">Verified APK SHA-256 Checksum</span>
+                    <code class="sha-code" id="apkSha256">45bcbb19c31d9ae33f56e6d0f5a1edb01305ea0c347bddff347af5df856d10a0</code>
+                </div>
+                <button type="button" class="copy-sha-btn" id="copyShaBtn" onclick="copySha256()">Copy</button>
+            </div>
+
+            <div class="qr-panel">
+                <div class="qr-box" id="qrMount" aria-label="QR code to open this download page on Android"></div>
+                <div class="qr-copy">
+                    <strong>Scan from Your Phone Camera</strong>
+                    <p>Point your Android camera at this QR code on your PC screen to open the download page directly on your phone.</p>
+                </div>
+            </div>
 
             <div class="steps-title">Quick Phone Install Guide</div>
             <ol class="steps">
@@ -217,41 +364,327 @@
                 </li>
                 <li>
                     <span class="num">2</span>
-                    <span>Open the downloaded <code>PorchSync.apk</code> file from your browser or Downloads notification.</span>
+                    <span>Open <strong>Settings &rarr; Settings Backup &amp; Restore</strong> in PorchSync and pick your <code>porchsync-backup-private.json</code> file in 1 tap.</span>
                 </li>
                 <li>
                     <span class="num">3</span>
-                    <span>If prompted once, allow <strong>Install unknown apps</strong> for your browser, then tap <strong>Install</strong> / <strong>Update</strong>.</span>
+                    <span>If upgrading from an older debug-signed build (<code>v2.7.3</code> or earlier), uninstall it once after exporting your backup JSON; future release updates install cleanly in place.</span>
                 </li>
             </ol>
 
+            <details class="releases-details" id="prevReleasesDetails">
+                <summary>
+                    <span>Previous Releases (1-Tap Rollback)</span>
+                    <span id="prevRelCount" style="color: var(--muted);">Loading...</span>
+                </summary>
+                <ul class="releases-list" id="prevReleasesList">
+                    <li><span style="color: var(--muted);">Fetching recent releases from GitHub...</span></li>
+                </ul>
+            </details>
+
             <p class="ota-tip">
-                Already installed? <strong>Swipe down</strong> inside PorchSync anytime to check this page for newer APK releases. Open <strong>No-PC Cloud</strong> in the app to enter your Tuya Access ID &amp; Secret once.
+                Already installed? <strong>Swipe down</strong> inside PorchSync anytime to check for SHA-256 verified APK updates.
             </p>
         </section>
     </main>
 
     <script>
+        function copySha256() {
+            const codeEl = document.getElementById("apkSha256");
+            const btn = document.getElementById("copyShaBtn");
+            const txt = (codeEl && codeEl.textContent || "").trim();
+            if (!txt || txt.startsWith("Loading")) return;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(txt).then(() => {
+                    if (btn) {
+                        btn.textContent = "Copied!";
+                        setTimeout(() => { btn.textContent = "Copy"; }, 1800);
+                    }
+                }).catch(() => {});
+            }
+        }
+
+        // Compact ISO-18004 Byte-Mode QR Encoder (Version 3-L / Version 4-L)
+        function createQrSvg(text) {
+            const bytes = new TextEncoder().encode(text);
+            const cfg = bytes.length <= 53
+                ? { size: 29, dataCW: 55, ecCW: 15, align: 22 }
+                : (bytes.length <= 78 ? { size: 33, dataCW: 80, ecCW: 20, align: 26 } : null);
+            if (!cfg) return "";
+
+            const EXP = new Array(512).fill(0);
+            const LOG = new Array(256).fill(0);
+            let x = 1;
+            for (let i = 0; i < 255; i++) {
+                EXP[i] = x;
+                EXP[i + 255] = x;
+                LOG[x] = i;
+                x <<= 1;
+                if (x & 0x100) x ^= 0x11d;
+            }
+            const gfMul = (a, b) => (a === 0 || b === 0) ? 0 : EXP[LOG[a] + LOG[b]];
+
+            let gen = [1];
+            for (let i = 0; i < cfg.ecCW; i++) {
+                const next = new Array(gen.length + 1).fill(0);
+                for (let j = 0; j < gen.length; j++) {
+                    next[j] ^= gen[j];
+                    next[j + 1] ^= gfMul(gen[j], EXP[i]);
+                }
+                gen = next;
+            }
+
+            const bits = [];
+            const pushBits = (val, n) => {
+                for (let i = n - 1; i >= 0; i--) bits.push((val >> i) & 1);
+            };
+            pushBits(0b0100, 4);
+            pushBits(bytes.length, 8);
+            for (const b of bytes) pushBits(b, 8);
+            const maxBits = cfg.dataCW * 8;
+            for (let i = 0; i < 4 && bits.length < maxBits; i++) bits.push(0);
+            while (bits.length % 8 !== 0) bits.push(0);
+            const dataBytes = [];
+            for (let i = 0; i < bits.length; i += 8) {
+                let v = 0;
+                for (let b = 0; b < 8; b++) v = (v << 1) | bits[i + b];
+                dataBytes.push(v);
+            }
+            let padToggle = 0;
+            while (dataBytes.length < cfg.dataCW) {
+                dataBytes.push(padToggle++ % 2 === 0 ? 0xec : 0x11);
+            }
+
+            const msg = dataBytes.concat(new Array(cfg.ecCW).fill(0));
+            for (let i = 0; i < cfg.dataCW; i++) {
+                const c = msg[i];
+                if (c !== 0) {
+                    for (let j = 0; j < gen.length; j++) msg[i + j] ^= gfMul(c, gen[j]);
+                }
+            }
+            const codewords = dataBytes.concat(msg.slice(cfg.dataCW));
+            const stream = [];
+            for (const cw of codewords) {
+                for (let b = 7; b >= 0; b--) stream.push((cw >> b) & 1);
+            }
+
+            const n = cfg.size;
+            const mod = Array.from({ length: n }, () => new Array(n).fill(0));
+            const res = Array.from({ length: n }, () => new Array(n).fill(false));
+            const setRes = (r, c, v) => {
+                if (r >= 0 && r < n && c >= 0 && c < n) {
+                    mod[r][c] = v ? 1 : 0;
+                    res[r][c] = true;
+                }
+            };
+            const drawFinder = (r0, c0) => {
+                for (let dr = -1; dr <= 7; dr++) {
+                    for (let dc = -1; dc <= 7; dc++) {
+                        const r = r0 + dr, c = c0 + dc;
+                        if (r < 0 || r >= n || c < 0 || c >= n) continue;
+                        const on = dr >= 0 && dr <= 6 && dc >= 0 && dc <= 6 &&
+                            (dr === 0 || dr === 6 || dc === 0 || dc === 6 || (dr >= 2 && dr <= 4 && dc >= 2 && dc <= 4));
+                        setRes(r, c, on);
+                    }
+                }
+            };
+            drawFinder(0, 0);
+            drawFinder(0, n - 7);
+            drawFinder(n - 7, 0);
+
+            for (let dr = -2; dr <= 2; dr++) {
+                for (let dc = -2; dc <= 2; dc++) {
+                    const on = Math.abs(dr) === 2 || Math.abs(dc) === 2 || (dr === 0 && dc === 0);
+                    setRes(cfg.align + dr, cfg.align + dc, on);
+                }
+            }
+            for (let i = 8; i < n - 8; i++) {
+                setRes(6, i, i % 2 === 0);
+                setRes(i, 6, i % 2 === 0);
+            }
+            setRes(n - 8, 8, 1);
+
+            const reserveFmt = () => {
+                for (let i = 0; i <= 8; i++) {
+                    if (i !== 6) res[8][i] = true;
+                    if (i !== 6) res[i][8] = true;
+                }
+                for (let k = 0; k < 7; k++) res[n - 1 - k][8] = true;
+                for (let k = 0; k < 8; k++) res[8][n - 8 + k] = true;
+            };
+            reserveFmt();
+
+            let bitIdx = 0;
+            let up = true;
+            for (let c = n - 1; c > 0; c -= 2) {
+                if (c === 6) c--;
+                for (let step = 0; step < n; step++) {
+                    const r = up ? (n - 1 - step) : step;
+                    for (const cc of [c, c - 1]) {
+                        if (!res[r][cc]) {
+                            mod[r][cc] = bitIdx < stream.length ? stream[bitIdx++] : 0;
+                        }
+                    }
+                }
+                up = !up;
+            }
+
+            const maskFns = [
+                (r, c) => (r + c) % 2 === 0,
+                (r, c) => r % 2 === 0,
+                (r, c) => c % 3 === 0,
+                (r, c) => (r + c) % 3 === 0,
+                (r, c) => (Math.floor(r / 2) + Math.floor(c / 3)) % 2 === 0,
+                (r, c) => ((r * c) % 2 + (r * c) % 3) === 0,
+                (r, c) => (((r * c) % 2 + (r * c) % 3) % 2) === 0,
+                (r, c) => (((r + c) % 2 + (r * c) % 3) % 2) === 0
+            ];
+
+            const applyFmt = (grid, maskId) => {
+                const raw = (0b01 << 3) | maskId;
+                let rem = raw << 10;
+                for (let i = 14; i >= 10; i--) {
+                    if (rem & (1 << i)) rem ^= 0x537 << (i - 10);
+                }
+                const fmt = ((raw << 10) | rem) ^ 0x5412;
+                const bit = (idx) => (fmt >> idx) & 1;
+                const tlCoords = [[8,0],[8,1],[8,2],[8,3],[8,4],[8,5],[8,7],[8,8],[7,8],[5,8],[4,8],[3,8],[2,8],[1,8],[0,8]];
+                for (let i = 0; i < 15; i++) {
+                    const b = bit(14 - i);
+                    grid[tlCoords[i][0]][tlCoords[i][1]] = b;
+                    if (i < 7) grid[n - 1 - i][8] = b;
+                    else grid[8][n - 15 + i] = b;
+                }
+            };
+
+            const scoreGrid = (g) => {
+                let pen = 0;
+                for (let r = 0; r < n; r++) {
+                    let run = 1;
+                    for (let c = 1; c < n; c++) {
+                        if (g[r][c] === g[r][c - 1]) {
+                            run++;
+                            if (run === 5) pen += 3;
+                            else if (run > 5) pen += 1;
+                        } else run = 1;
+                    }
+                }
+                for (let c = 0; c < n; c++) {
+                    let run = 1;
+                    for (let r = 1; r < n; r++) {
+                        if (g[r][c] === g[r - 1][c]) {
+                            run++;
+                            if (run === 5) pen += 3;
+                            else if (run > 5) pen += 1;
+                        } else run = 1;
+                    }
+                }
+                return pen;
+            };
+
+            let bestMask = 0;
+            let bestPen = Infinity;
+            let bestGrid = null;
+            for (let m = 0; m < 8; m++) {
+                const g = mod.map((row, r) => row.map((v, c) => (!res[r][c] && maskFns[m](r, c)) ? (v ^ 1) : v));
+                applyFmt(g, m);
+                const s = scoreGrid(g);
+                if (s < bestPen) {
+                    bestPen = s;
+                    bestMask = m;
+                    bestGrid = g;
+                }
+            }
+
+            let d = "";
+            for (let r = 0; r < n; r++) {
+                for (let c = 0; c < n; c++) {
+                    if (bestGrid[r][c]) d += `M${c + 2},${r + 2}h1v1h-1z`;
+                }
+            }
+            const vb = n + 4;
+            return `<svg role="img" aria-label="QR code to open PorchSync download page" viewBox="0 0 ${vb} ${vb}" shape-rendering="crispEdges"><rect width="${vb}" height="${vb}" fill="#ffffff"/><path d="${d}" fill="#090d16"/></svg>`;
+        }
+
         (async function () {
+            const qrUrl = window.location.protocol.startsWith("http")
+                ? window.location.href.split("#")[0]
+                : "https://jimbo1011.github.io/porchsync/";
+            const qrEl = document.getElementById("qrMount");
+            if (qrEl) qrEl.innerHTML = createQrSvg(qrUrl);
+
             try {
                 const res = await fetch("./version.json?t=" + Date.now(), { cache: "no-store" });
-                if (!res.ok) return;
-                const data = await res.json();
-                if (data.versionName && data.versionCode) {
-                    const verEl = document.getElementById("versionLabel");
-                    if (verEl) verEl.textContent = "Latest Release: v" + data.versionName + " • Build " + data.versionCode;
-                    const btnSpan = document.querySelector("#apkDownloadBtn span");
-                    if (btnSpan) btnSpan.textContent = "⬇ Download PorchSync.apk (v" + data.versionName + ")";
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.versionName && data.versionCode) {
+                        const verEl = document.getElementById("versionLabel");
+                        if (verEl) verEl.textContent = "Latest Release: v" + data.versionName + " • Build " + data.versionCode;
+                        const btnSpan = document.querySelector("#apkDownloadBtn span");
+                        if (btnSpan) btnSpan.textContent = "⬇ Download PorchSync.apk (v" + data.versionName + ")";
+                    }
+                    if (data.notes) {
+                        const notesEl = document.getElementById("releaseNotes");
+                        if (notesEl) notesEl.textContent = data.notes;
+                    }
+                    if (data.apkUrl) {
+                        const btnEl = document.getElementById("apkDownloadBtn");
+                        if (btnEl) btnEl.href = data.apkUrl;
+                        const ghLink = document.getElementById("githubReleaseLink");
+                        if (ghLink) ghLink.href = data.apkUrl;
+                    }
+                    const metaEl = document.getElementById("apkMetaLine");
+                    if (metaEl && data.sizeBytes) {
+                        const mb = (Number(data.sizeBytes) / (1024 * 1024)).toFixed(2);
+                        const dt = data.buildDate ? " • " + data.buildDate : "";
+                        metaEl.textContent = "Android 8.0+ • Release-Signed (R8) • " + mb + " MB" + dt;
+                    }
+                    const shaEl = document.getElementById("apkSha256");
+                    if (shaEl) {
+                        shaEl.textContent = data.sha256 ? data.sha256 : "Verify on GitHub Releases page";
+                    }
                 }
-                if (data.notes) {
-                    const notesEl = document.getElementById("releaseNotes");
-                    if (notesEl) notesEl.textContent = data.notes;
-                }
-                if (data.apkUrl) {
-                    const btnEl = document.getElementById("apkDownloadBtn");
-                    if (btnEl) btnEl.href = data.apkUrl;
-                    const ghLink = document.getElementById("githubReleaseLink");
-                    if (ghLink) ghLink.href = data.apkUrl;
+            } catch (_) {}
+
+            try {
+                const relRes = await fetch("https://api.github.com/repos/Jimbo1011/porchsync/releases?per_page=5", {
+                    headers: { "Accept": "application/vnd.github+json" }
+                });
+                const listEl = document.getElementById("prevReleasesList");
+                const countEl = document.getElementById("prevRelCount");
+                if (relRes.ok && listEl) {
+                    const rels = await relRes.json();
+                    if (Array.isArray(rels) && rels.length > 0) {
+                        if (countEl) countEl.textContent = rels.length + " available";
+                        listEl.replaceChildren(...rels.map(r => {
+                            const apk = Array.isArray(r.assets) ? r.assets.find(a => a.name && a.name.endsWith(".apk")) : null;
+                            const rawHref = apk ? apk.browser_download_url : r.html_url;
+                            const dlHref = typeof rawHref === "string" && rawHref.startsWith("https://")
+                                ? rawHref
+                                : "https://github.com/Jimbo1011/porchsync/releases";
+                            const mb = apk && apk.size ? ` (${(apk.size / (1024 * 1024)).toFixed(2)} MB)` : "";
+                            const tag = String(r.tag_name || r.name || "Release");
+
+                            const li = document.createElement("li");
+                            const leftSpan = document.createElement("span");
+                            const strong = document.createElement("strong");
+                            strong.textContent = tag;
+                            leftSpan.appendChild(strong);
+                            if (mb) leftSpan.appendChild(document.createTextNode(mb));
+
+                            const link = document.createElement("a");
+                            link.href = dlHref;
+                            link.textContent = "Download";
+
+                            li.appendChild(leftSpan);
+                            li.appendChild(link);
+                            return li;
+                        }));
+                    } else if (countEl) {
+                        countEl.textContent = "0 found";
+                    }
+                } else if (countEl) {
+                    countEl.textContent = "Open GitHub Releases";
                 }
             } catch (_) {}
         })();
