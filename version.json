@@ -1,10 +1,10 @@
 {
-  "versionCode": 19,
-  "versionName": "2.8.1",
+  "versionCode": 20,
+  "versionName": "2.8.2",
   "apkUrl": "https://github.com/Jimbo1011/porchsync/releases/latest/download/PorchSync.apk",
   "releasePage": "https://jimbo1011.github.io/porchsync/",
-  "sha256": "702457b4ca7524fc73cb64abe7013d70f47bbf72018e1a4c7f40625a8160c866",
-  "sizeBytes": 2200663,
-  "buildDate": "2026-11-22 05:11 UTC",
-  "notes": "PorchSync v2.8.1: Security & Play Protect hardening (removed REQUEST_INSTALL_PACKAGES, REQUEST_IGNORE_BATTERY_OPTIMIZATIONS, WAKE_LOCK & FileProvider; strict HTTPS network_security_config with LAN-only cleartext allowlist; locked down WebView via appassets.androidplatform.net; disabled backup & widget custom-action exports; kept Android 14+ foreground service intact; enabled R8 -dontobfuscate)."
+  "sha256": "6f5e4e833976419ba0784c50c26ef7dfb67064a457ff280d23cc2b404b9ca14a",
+  "sizeBytes": 2202107,
+  "buildDate": "2026-11-22 06:03 UTC",
+  "notes": "PorchSync v2.8.2: Outside temperature now mirrors the live Outside Temperature sensor (eb062141636a16bbc2b5py) end-to-end across the PC controller, Android app dial, devices list, widgets, foreground notification, and both Manual & Auto modes (preserving v2.8.1 Play Protect security hardening)."
 }
