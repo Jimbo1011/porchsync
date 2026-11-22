@@ -1,10 +1,10 @@
 {
-  "versionCode": 21,
-  "versionName": "3.0.0",
+  "versionCode": 22,
+  "versionName": "3.1.0",
   "apkUrl": "https://github.com/Jimbo1011/porchsync/releases/latest/download/PorchSync.apk",
   "releasePage": "https://jimbo1011.github.io/porchsync/",
-  "sha256": "59db23a252764bd425d3a3687b95a40c04148dc2b1b9edd5070af007d155d146",
-  "sizeBytes": 2206935,
-  "buildDate": "2026-11-22 07:41 UTC",
-  "notes": "PorchSync v3.0.0: Strict \u00b10\u00b0F multi-zone staging (+2.0\u00b0F Fan ONLY, +2.5\u00b0F Eco AC + Fan, +3.0\u00b0F Cool AC + Fan; Heater back -1.0\u00b0F, Porch heater via Door side -3.0\u00b0F, Porch heater #2 via My side -3.0\u00b0F), hard Heat/Cooling mutual-exclusion interlocks with single-authority PC-LAN arbitration, serialized IR dispatch, and redesigned 6-stage UI."
+  "sha256": "be57f30b5beb465ba6e18a79a6874335ff78ef2795f600124c04d8dfde88430e",
+  "sizeBytes": 2238467,
+  "buildDate": "2026-11-22 19:03 UTC",
+  "notes": "PorchSync v3.1.0: Universal center-referenced -5.0\u00b0F zone heating (Porch heater via My side, Porch heater #2 via Door side, Heater back -1.0\u00b0F) and +2.0/+2.5/+3.0\u00b0F Cooling with strict mutual exclusion, dynamic state-tinted & Material You widgets, instant Syncing tap feedback, low-battery & LAN/Cloud badges, widget picker previews, reconfigurable widget settings, and 4x2/2x1 pinning."
 }
