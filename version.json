@@ -1,10 +1,10 @@
 {
-  "versionCode": 20,
-  "versionName": "2.8.2",
+  "versionCode": 21,
+  "versionName": "3.0.0",
   "apkUrl": "https://github.com/Jimbo1011/porchsync/releases/latest/download/PorchSync.apk",
   "releasePage": "https://jimbo1011.github.io/porchsync/",
-  "sha256": "6f5e4e833976419ba0784c50c26ef7dfb67064a457ff280d23cc2b404b9ca14a",
-  "sizeBytes": 2202107,
-  "buildDate": "2026-11-22 06:03 UTC",
-  "notes": "PorchSync v2.8.2: Outside temperature now mirrors the live Outside Temperature sensor (eb062141636a16bbc2b5py) end-to-end across the PC controller, Android app dial, devices list, widgets, foreground notification, and both Manual & Auto modes (preserving v2.8.1 Play Protect security hardening)."
+  "sha256": "59db23a252764bd425d3a3687b95a40c04148dc2b1b9edd5070af007d155d146",
+  "sizeBytes": 2206935,
+  "buildDate": "2026-11-22 07:41 UTC",
+  "notes": "PorchSync v3.0.0: Strict \u00b10\u00b0F multi-zone staging (+2.0\u00b0F Fan ONLY, +2.5\u00b0F Eco AC + Fan, +3.0\u00b0F Cool AC + Fan; Heater back -1.0\u00b0F, Porch heater via Door side -3.0\u00b0F, Porch heater #2 via My side -3.0\u00b0F), hard Heat/Cooling mutual-exclusion interlocks with single-authority PC-LAN arbitration, serialized IR dispatch, and redesigned 6-stage UI."
 }
