@@ -1,7 +1,7 @@
 {
-  "versionCode": 16,
-  "versionName": "2.7.2",
+  "versionCode": 17,
+  "versionName": "2.7.3",
   "apkUrl": "https://github.com/Jimbo1011/porchsync/releases/latest/download/PorchSync.apk",
   "releasePage": "https://jimbo1011.github.io/porchsync/",
-  "notes": "PorchSync v2.7.2: Fixed Android 14+ startup crash (added required connectedDevice FGS permissions, ServiceCompat.startForeground, and deferred service launch after WebView init), verified crash-free on Android 14."
+  "notes": "PorchSync v2.7.3: Oscillating fan +2.0°F cooling-only (no circulation), unoccupied setback fix, in-app thresholds & Day/Night Quiet Hours schedule, 24h temp/runtime graph, Feels-Like & stale warnings, timed presets/All OFF, compressor cooldown, in-app APK updater & JSON backup."
 }
