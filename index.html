@@ -325,25 +325,25 @@
 
             <div class="ver-badge">
                 <span class="dot" aria-hidden="true"></span>
-                <span id="versionLabel">Latest Release: v2.8.0 &bull; Build 18</span>
+                <span id="versionLabel">Latest Release: v2.8.1 &bull; Build 19</span>
             </div>
 
             <p class="notes" id="releaseNotes">
-                PorchSync v2.8.0: Release-signed R8 APK (smaller &amp; upgrade-safe), 1-tap .json file &amp; PIN-encrypted backup, SHA-256 OTA verification, freeze/overheat/door/offline alerts, 2x1 compact widget &amp; launcher shortcuts, Home Wi-Fi LAN PC fast auto-switching, JUnit tests &amp; CI release automation.
+                PorchSync v2.8.1: Security &amp; Play Protect hardening (removed REQUEST_INSTALL_PACKAGES, REQUEST_IGNORE_BATTERY_OPTIMIZATIONS, WAKE_LOCK &amp; FileProvider; strict HTTPS network_security_config with LAN-only cleartext allowlist; locked down WebView via appassets.androidplatform.net; disabled backup &amp; widget custom-action exports; kept Android 14+ foreground service intact; enabled R8 -dontobfuscate).
             </p>
 
             <a id="apkDownloadBtn" class="dl-btn" href="https://github.com/Jimbo1011/porchsync/releases/latest/download/PorchSync.apk">
-                <span>&#x2B07; Download PorchSync.apk (v2.8.0)</span>
+                <span>&#x2B07; Download PorchSync.apk (v2.8.1)</span>
             </a>
             <div style="margin-top: 10px; text-align: center;">
                 <a id="githubReleaseLink" href="https://github.com/Jimbo1011/porchsync/releases/latest/download/PorchSync.apk" style="color: var(--blue); font-size: 12px; text-decoration: none;">Direct GitHub Releases Mirror &rarr;</a>
             </div>
-            <span class="meta-line" id="apkMetaLine">Android 8.0+ &bull; Release-Signed (R8) &bull; 2.04 MB &bull; 2026-11-22 04:20 UTC</span>
+            <span class="meta-line" id="apkMetaLine">Android 8.0+ &bull; Release-Signed (R8) &bull; 2.10 MB &bull; 2026-11-22 05:11 UTC</span>
 
             <div class="integrity-row">
                 <div class="sha-wrap">
                     <span class="sha-label">Verified APK SHA-256 Checksum</span>
-                    <code class="sha-code" id="apkSha256">45bcbb19c31d9ae33f56e6d0f5a1edb01305ea0c347bddff347af5df856d10a0</code>
+                    <code class="sha-code" id="apkSha256">702457b4ca7524fc73cb64abe7013d70f47bbf72018e1a4c7f40625a8160c866</code>
                 </div>
                 <button type="button" class="copy-sha-btn" id="copyShaBtn" onclick="copySha256()">Copy</button>
             </div>
@@ -368,7 +368,7 @@
                 </li>
                 <li>
                     <span class="num">3</span>
-                    <span>If upgrading from an older debug-signed build (<code>v2.7.3</code> or earlier), uninstall it once after exporting your backup JSON; future release updates install cleanly in place.</span>
+                    <span>Because PorchSync is distributed directly from GitHub instead of the Google Play Store, Play Protect may show an unfamiliar-app check once: tap <strong>Scan app</strong> or <strong>More details &rarr; Install anyway</strong>. Future release updates upgrade cleanly in place (only debug-signed builds from <code>v2.7.3</code> or earlier require a one-time uninstall first).</span>
                 </li>
             </ol>
 
