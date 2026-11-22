@@ -1,10 +1,10 @@
 {
-  "versionCode": 18,
-  "versionName": "2.8.0",
+  "versionCode": 19,
+  "versionName": "2.8.1",
   "apkUrl": "https://github.com/Jimbo1011/porchsync/releases/latest/download/PorchSync.apk",
   "releasePage": "https://jimbo1011.github.io/porchsync/",
-  "sha256": "45bcbb19c31d9ae33f56e6d0f5a1edb01305ea0c347bddff347af5df856d10a0",
-  "sizeBytes": 2140791,
-  "buildDate": "2026-11-22 04:20 UTC",
-  "notes": "PorchSync v2.8.0: Release-signed R8 APK (smaller & upgrade-safe), 1-tap .json file & PIN-encrypted backup, SHA-256 OTA verification, freeze/overheat/door/offline alerts, 2x1 compact widget & launcher shortcuts, Home Wi-Fi LAN PC fast auto-switching, JUnit tests & CI release automation."
+  "sha256": "702457b4ca7524fc73cb64abe7013d70f47bbf72018e1a4c7f40625a8160c866",
+  "sizeBytes": 2200663,
+  "buildDate": "2026-11-22 05:11 UTC",
+  "notes": "PorchSync v2.8.1: Security & Play Protect hardening (removed REQUEST_INSTALL_PACKAGES, REQUEST_IGNORE_BATTERY_OPTIMIZATIONS, WAKE_LOCK & FileProvider; strict HTTPS network_security_config with LAN-only cleartext allowlist; locked down WebView via appassets.androidplatform.net; disabled backup & widget custom-action exports; kept Android 14+ foreground service intact; enabled R8 -dontobfuscate)."
 }
